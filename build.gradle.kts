@@ -1,5 +1,7 @@
 import org.gradle.kotlin.dsl.implementation
 import org.gradle.kotlin.dsl.runtimeOnly
+import org.gradle.kotlin.dsl.testImplementation
+import org.gradle.kotlin.dsl.testRuntimeOnly
 
 plugins {
     java
@@ -28,7 +30,15 @@ dependencies {
     compileOnly("org.projectlombok:lombok")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.h2database:h2")
-    implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
+    annotationProcessor("org.projectlombok:lombok")
+    testImplementation("org.springframework.boot:spring-boot-starter-data-jpa-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation ("org.junit.jupiter:junit-jupiter")
+    testRuntimeOnly ("org.junit.platform:junit-platform-launcher")
+    implementation ("org.springframework.boot:spring-boot-starter-thymeleaf")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:4.0.0")
+    implementation ("org.springframework.boot:spring-boot-starter-validation")
 }
 
 tasks.withType<Test> {
