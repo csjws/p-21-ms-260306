@@ -1,3 +1,6 @@
+import org.gradle.kotlin.dsl.implementation
+import org.gradle.kotlin.dsl.runtimeOnly
+
 plugins {
     java
     id("org.springframework.boot") version "4.0.3"
@@ -19,9 +22,13 @@ repositories {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-h2console")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
-    testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    compileOnly("org.projectlombok:lombok")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
+    runtimeOnly("com.h2database:h2")
+    implementation ("org.springframework.boot:spring-boot-starter-data-jpa")
 }
 
 tasks.withType<Test> {
