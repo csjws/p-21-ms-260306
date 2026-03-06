@@ -1,4 +1,4 @@
-package com.back;
+package com.back.question;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

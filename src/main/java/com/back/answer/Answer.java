@@ -1,5 +1,6 @@
-package com.back;
+package com.back.answer;
 
+import com.back.question.Question;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

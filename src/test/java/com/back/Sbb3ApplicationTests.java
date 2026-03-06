@@ -1,5 +1,8 @@
 package com.back;
 
+import com.back.answer.Answer;
+import com.back.question.Question;
+import com.back.question.QuestionRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
